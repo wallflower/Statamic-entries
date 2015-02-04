@@ -12,7 +12,7 @@ Inside your fields yaml file, you can add something similar to the following:
 
 ```
 fields:
-  services:
+  myservices:
     type: entries
     display: Provided Services
     instructions: "Please list the services you provide from the list below (max 2 choices)."
@@ -50,7 +50,7 @@ This will allow you to display any of the fields in the existing entries.
 
 So, given the above example, the template tag would look like:
 ```
-  {{ entries:listing folder="services" conditions="slug:{services|option_list}" }}
+  {{ entries:listing folder="services" conditions="slug:{myservices|option_list}" }}
     {{ if no_results }}
       <p>No services provided at this time.</p>
     {{ else }}
